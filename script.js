@@ -1,31 +1,42 @@
-document.getElementById('heads').onclick = function () {
-  flip('heads');
-};
+let num1Input = document.querySelector("#num1");
+let num2Input = document.querySelector("#num2");
 
-document.getElementById('tails').onclick = function () {
-  flip('tails');
-};
+let plusButton = document.querySelector("#plus");
+let minusButton = document.querySelector("#minus");
+let multiButton = document.querySelector("#multi");
+let divButton = document.querySelector("#div");
 
-function flip(choice) {
-  let randomNumber = Math.random();
+let resultDiv = document.querySelector("#result");
 
-  let result;
-  if (randomNumber < 0.5) {
-    result = 'heads';
-  } else {
-    result = 'tails';
-  }
-  document.getElementById('result').textContent = 'Coin landed on: ' + result;
-  let message;
-  if (choice === result) {
-    message = 'You win!';
-    color = 'green';
-  } else {
-    message = 'You lose!';
-    color = 'red';
-  }
-
-  const outcomeElement = document.getElementById('outcome');
-  outcomeElement.textContent = message;
-  outcomeElement.style.color = color;
+function addition(x, y) {
+    console.log(x + y);
+    return x + y;
 }
+
+plusButton.addEventListener("click", function() {
+    let num1 = parseFloat(num1Input.value);
+    let num2 = parseFloat(num2Input.value);
+    // addition(num1, num2);
+    resultDiv.textContent = addition(num1, num2);
+});
+
+minusButton.addEventListener("click", function() {
+    let num1 = parseFloat(num1Input.value);
+    let num2 = parseFloat(num2Input.value);
+    // addition(num1, num2);
+    resultDiv.textContent = addition(num1, num2);
+});
+
+multiButton.addEventListener("click", function() {
+    let num1 = parseFloat(num1Input.value);
+    let num2 = parseFloat(num2Input.value);
+    // addition(num1, num2);
+    resultDiv.textContent = addition(num1, num2);
+});
+
+divButton.addEventListener("click", function() {
+    let num1 = parseFloat(num1Input.value);
+    let num2 = parseFloat(num2Input.value);
+    // addition(num1, num2);
+    resultDiv.textContent = addition(num1, num2);
+});
